@@ -1,0 +1,22 @@
+<%= form_with(model: pagina) do |form| %>
+  <% if pagina.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pagina.errors.count, "error") %> prohibited this pagina from being saved:</h2>
+
+      <ul>
+        <% pagina.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :url %>
+    <%= form.text_field :url %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
